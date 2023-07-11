@@ -1,24 +1,33 @@
-'use strict'
-//RICHIAMO BUTTON
+'use strict';
+
+// RICHIAMO BUTTON
 const InputButton = document.querySelector(".invia-dati");
+const gridContainer = document.querySelector(".grid-container");
 
-//EVENTLISTENER
-InputButton.addEventListener("click", function () {
+// RICHIAMA FUNCTION onBtnClick
+InputButton.addEventListener("click", onBtnClick);
 
-  const gridContainer = document.querySelector(".grid-container");
+//RICHIAMA FUNCTION createGrid
+createGrid(gridContainer);
+
+// DICHIARAZIONE FUNCTION onBtnClick
+function onBtnClick() {
+}
+
+// DICHIARAZIONE FUNCTION createGrid
+function createGrid(gridContainer) {
   gridContainer.innerHTML = "";
-
   for (let i = 1; i <= 100; i++) {
-    const Box = document.createElement("div");
-    Box.classList.add("square");
-    Box.innerHTML = i;
-    gridContainer.append(Box);
+    const box = document.createElement("div");
+    box.classList.add("square");
+    box.innerHTML = i;
+    gridContainer.append(box);
 
-    //AL CLICK LA CELLA SI COLORA DI AZZURRO E MANDA UN MSG IN CONSOLE
-    Box.addEventListener("click", function () {
-      Box.classList.add("bg-info");
-      console.log(`cella selezionata: ${i}`)
+    //CHANGE BOX COLOR
+    box.addEventListener("click", function () {
+      box.classList.add("bg-info");
+      console.log(`cella selezionata: ${i}`);
     });
   }
-})
+}
 

@@ -7,11 +7,10 @@ const gridContainer = document.querySelector(".grid-container");
 // RICHIAMA FUNCTION onBtnClick
 InputButton.addEventListener("click", onBtnClick);
 
-//RICHIAMA FUNCTION createGrid
-createGrid(gridContainer);
-
 // DICHIARAZIONE FUNCTION onBtnClick
 function onBtnClick() {
+  //RICHIAMA FUNCTION createGrid
+  createGrid(gridContainer);
 }
 
 // DICHIARAZIONE FUNCTION createGrid
